@@ -1,41 +1,49 @@
+# 难度：中等
+
+给定一个二叉树的根节点 `root`，想象自己站在它的右侧，按照从顶部到底部的顺序，返回从右侧所能看到的节点值。
+
+**示例 1:**
+![Binary Tree Right Side View 1](https://assets.leetcode.com/uploads/2021/02/14/tree.jpg)
+输入: `[1,2,3,null,5,null,4]`
+输出: `[1,3,4]`
+
+**示例 2:**
+输入: `[1,null,3]`
+输出: `[1,3]`
+
+**示例 3:**
+输入: `[]`
+输出: `[]`
+
+**提示:**
+- 二叉树的节点个数的范围是 `[0,100]`
+- `-100 <= Node.val <= 100` 
+
 ```Java
 class Solution {
     public List<Integer> rightSideView(TreeNode root) {
-        List<Integer> ans = new ArrayList<>();
-        if (root == null) return ans;
+        List<Integer> res = new ArrayList<>();
+        if (root == null) {
+            return res;
+        }
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
-        while (0 < queue.size()) {
+        while (!queue.isEmpty()) {
             int size = queue.size();
-            while (0 < size--) {
-                root = queue.poll();
-                if (root.left != null) queue.offer(root.left);
-                if (root.right != null) queue.offer(root.right);
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
+                if (i == size - 1) {  // 如果是当前层的最后一个节点
+                    res.add(node.val);
+                }
             }
-            ans.add(root.val);
         }
-        return ans;
-    }
-}
-```
-
-```Java
-import java.util.ArrayList;
-
-class Solution {
-
-    public List<Integer> rightSideView(TreeNode root) {
-        List<Integer> ans = new ArrayList<>();
-        _helper(root, ans, 0);
-        return ans;
-    }
-
-
-    private void _helper(TreeNode node, List<Integer> res, int depth) {
-        if (node == null) return;
-        if (res.size() == depth) res.add(node.val);
-        _helper(node.right, res, depth + 1);
-        _helper(node.left, res, depth + 1);
+        return res;
     }
 }
 ```

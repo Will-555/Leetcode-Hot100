@@ -1,3 +1,5 @@
+# 难度：中等
+
 你这个学期必须选修 `numCourses` 门课程，记为 `0` 到 `numCourses - 1` 。
 
 在选修某些课程之前需要一些先修课程。 先修课程按数组 `prerequisites` 给出，其中 `prerequisites[i] = [ai, bi]` ，表示如果要学习课程 `ai` 则 **必须** 先学习课程  `bi` 。
