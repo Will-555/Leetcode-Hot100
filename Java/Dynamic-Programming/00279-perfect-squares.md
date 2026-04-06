@@ -17,6 +17,13 @@
 **提示：**
 - `1 <= n <= 10^4`
 
+### 解法一：动态规划 (DP)
+
+这是最通用的解法，适用于此类“最少数量”问题的求解。
+
+*   **时间复杂度**：$O(n \sqrt{n})$
+*   **空间复杂度**：$O(n)$
+
 ```Java
 class Solution {
     public int numSquares(int n) {
@@ -29,6 +36,40 @@ class Solution {
             f[i] = minn + 1;
         }
         return f[n];
+    }
+}
+```
+
+### 解法二：数学最优解 (拉格朗日四平方和定理)
+
+这是该特定问题的最优解法。根据定理，结果只能是 1, 2, 3, 4 其中的一个。
+
+*   **时间复杂度**：$O(\sqrt{n})$
+*   **空间复杂度**：$O(1)$
+
+```Java
+class Solution {
+    public int numSquares(int n) {
+        // 判断是否为 1
+        if (isSquare(n)) return 1;
+
+        // 判断是否为 4 (n = 4^k * (8m + 7))
+        int temp = n;
+        while (temp % 4 == 0) temp /= 4;
+        if (temp % 8 == 7) return 4;
+
+        // 判断是否为 2 (n = a^2 + b^2)
+        for (int i = 1; i * i <= n; i++) {
+            if (isSquare(n - i * i)) return 2;
+        }
+
+        // 排除以上情况，结果为 3
+        return 3;
+    }
+
+    private boolean isSquare(int n) {
+        int root = (int) Math.sqrt(n);
+        return root * root == n;
     }
 }
 ```

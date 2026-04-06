@@ -1,6 +1,7 @@
 # LeetCode Hot 100 (Java)
 
 项目包含 LeetCode Hot 100 题目的 Java 解法及题目说明。
+https://leetcode.cn/studyplan/top-100-liked/
 
 ## 题目分类
 
@@ -129,19 +130,40 @@
 ### 动态规划 (Dynamic Programming)
 |  ID   | 题目                                                                                 |  难度  |                                   链接                                   |
 | :---: | :----------------------------------------------------------------------------------- | :----: | :----------------------------------------------------------------------: |
+|  32   | [最长有效括号](./Java/Dynamic-Programming/00032-longest-valid-parentheses.md)        |  Hard  |   [LeetCode](https://leetcode.cn/problems/longest-valid-parentheses/)    |
 |  70   | [爬楼梯](./Java/Dynamic-Programming/00070-climbing-stairs.md)                        |  Easy  |        [LeetCode](https://leetcode.cn/problems/climbing-stairs/)         |
 |  118  | [杨辉三角](./Java/Dynamic-Programming/00118-pascals-triangle.md)                     |  Easy  |        [LeetCode](https://leetcode.cn/problems/pascals-triangle/)        |
+|  152  | [乘积最大子数组](./Java/Dynamic-Programming/00152-maximum-product-subarray.md)       | Medium |    [LeetCode](https://leetcode.cn/problems/maximum-product-subarray/)    |
 |  198  | [打家劫舍](./Java/Dynamic-Programming/00198-house-robber.md)                         | Medium |          [LeetCode](https://leetcode.cn/problems/house-robber/)          |
 |  279  | [完全平方数](./Java/Dynamic-Programming/00279-perfect-squares.md)                    | Medium |        [LeetCode](https://leetcode.cn/problems/perfect-squares/)         |
 |  322  | [零钱兑换](./Java/Dynamic-Programming/00322-coin-change.md)                          | Medium |          [LeetCode](https://leetcode.cn/problems/coin-change/)           |
 |  139  | [单词拆分](./Java/Dynamic-Programming/00139-word-break.md)                           | Medium |           [LeetCode](https://leetcode.cn/problems/word-break/)           |
 |  300  | [最长递增子序列](./Java/Dynamic-Programming/00300-longest-increasing-subsequence.md) | Medium | [LeetCode](https://leetcode.cn/problems/longest-increasing-subsequence/) |
 |  416  | [分割等和子集](./Java/Dynamic-Programming/00416-partition-equal-subset-sum.md)       | Medium |   [LeetCode](https://leetcode.cn/problems/partition-equal-subset-sum/)   |
-|  62   | [不同路径](./Java/Dynamic-Programming/00062-unique-paths.md)                         | Medium |          [LeetCode](https://leetcode.cn/problems/unique-paths/)          |
-|   5   | [最长回文子串](./Java/Dynamic-Programming/00005-longest-palindromic-substring.md)    | Medium | [LeetCode](https://leetcode.cn/problems/longest-palindromic-substring/)  |
-|  72   | [编辑距离](./Java/Dynamic-Programming/00072-edit-distance.md)                        |  Hard  |         [LeetCode](https://leetcode.cn/problems/edit-distance/)          |
+### 多维动态规划 (Multi-Dimensional DP)
+|  ID   | 题目                                                                               |  难度  |                                  链接                                   |
+| :---: | :--------------------------------------------------------------------------------- | :----: | :---------------------------------------------------------------------: |
+|  62   | [不同路径](./Java/Multi-Dimensional-DP/00062-unique-paths.md)                      | Medium |         [LeetCode](https://leetcode.cn/problems/unique-paths/)          |
+|  64   | [最小路径和](./Java/Multi-Dimensional-DP/00064-minimum-path-sum.md)                | Medium |       [LeetCode](https://leetcode.cn/problems/minimum-path-sum/)        |
+|   5   | [最长回文子串](./Java/Multi-Dimensional-DP/00005-longest-palindromic-substring.md) | Medium | [LeetCode](https://leetcode.cn/problems/longest-palindromic-substring/) |
+| 1143  | [最长公共子序列](./Java/Multi-Dimensional-DP/01143-longest-common-subsequence.md)  | Medium |  [LeetCode](https://leetcode.cn/problems/longest-common-subsequence/)   |
+|  72   | [编辑距离](./Java/Multi-Dimensional-DP/00072-edit-distance.md)                     |  Hard  |         [LeetCode](https://leetcode.cn/problems/edit-distance/)         |
+
 
 ### 技巧 (Skills)
-|  ID   | 题目                                                     | 难度  |                          链接                           |
-| :---: | :------------------------------------------------------- | :---: | :-----------------------------------------------------: |
-|  136  | [只出现一次的数字](./Java/Skills/00136-single-number.md) | Easy  | [LeetCode](https://leetcode.cn/problems/single-number/) |
+|  ID   | 题目                                                           |  难度  |                                链接                                 |
+| :---: | :------------------------------------------------------------- | :----: | :-----------------------------------------------------------------: |
+|  31   | [下一个排列](./Java/Skills/00031-next-permutation.md)          | Medium |     [LeetCode](https://leetcode.cn/problems/next-permutation/)      |
+|  75   | [颜色分类](./Java/Skills/00075-sort-colors.md)                 | Medium |        [LeetCode](https://leetcode.cn/problems/sort-colors/)        |
+|  136  | [只出现一次的数字](./Java/Skills/00136-single-number.md)       |  Easy  |       [LeetCode](https://leetcode.cn/problems/single-number/)       |
+|  169  | [多数元素](./Java/Skills/00169-majority-element.md)            |  Easy  |     [LeetCode](https://leetcode.cn/problems/majority-element/)      |
+|  287  | [寻找重复数](./Java/Skills/00287-find-the-duplicate-number.md) | Medium | [LeetCode](https://leetcode.cn/problems/find-the-duplicate-number/) |
+
+
+
+
+
+
+5	最长回文子串	Medium	LeetCode
+1143	最长公共子序列	Medium	LeetCode
+72	编辑距离	Hard	LeetCode

@@ -32,38 +32,29 @@
 ```Java
 class Solution {
     public int minDistance(String word1, String word2) {
-        int n = word1.length();
-        int m = word2.length();
-
-        // 有一个字符串为空串
-        if (n * m == 0) {
-            return n + m;
-        }
-
-        // DP 数组
-        int[][] D = new int[n + 1][m + 1];
-
-        // 边界状态初始化
-        for (int i = 0; i < n + 1; i++) {
-            D[i][0] = i;
-        }
-        for (int j = 0; j < m + 1; j++) {
-            D[0][j] = j;
-        }
-
-        // 计算所有 DP 值
-        for (int i = 1; i < n + 1; i++) {
-            for (int j = 1; j < m + 1; j++) {
-                int left = D[i - 1][j] + 1;
-                int down = D[i][j - 1] + 1;
-                int left_down = D[i - 1][j - 1];
-                if (word1.charAt(i - 1) != word2.charAt(j - 1)) {
-                    left_down += 1;
+        int n = word1.length(), m = word2.length();
+        // 确保 word2 是较短的字符串，以优化空间
+        if (n < m) return minDistance(word2, word1);
+        
+        int[] dp = new int[m + 1];
+        // 初始化空字符串的情况
+        for (int j = 0; j <= m; j++) dp[j] = j;
+        
+        for (int i = 1; i <= n; i++) {
+            int prev = dp[0]; // 相当于 dp[i-1][j-1]
+            dp[0] = i; 
+            for (int j = 1; j <= m; j++) {
+                int temp = dp[j]; // 相当于 dp[i-1][j]
+                if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
+                    dp[j] = prev;
+                } else {
+                    // 三种操作：左 (dp[j-1]), 上 (dp[j]), 左上 (prev)
+                    dp[j] = Math.min(Math.min(dp[j - 1], dp[j]), prev) + 1;
                 }
-                D[i][j] = Math.min(left, Math.min(down, left_down));
+                prev = temp;
             }
         }
-        return D[n][m];
+        return dp[m];
     }
 }
 ```
