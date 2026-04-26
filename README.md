@@ -64,6 +64,8 @@ https://leetcode.cn/studyplan/top-100-liked/
 |  24   | [两两交换链表中的节点](./Java/Linked-List/00024-swap-nodes-in-pairs.md)                   | Medium |       [LeetCode](https://leetcode.cn/problems/swap-nodes-in-pairs/)        |
 |  23   | [合并 K 个升序链表](./Java/Linked-List/00023-merge-k-sorted-lists.md)                     |  Hard  |       [LeetCode](https://leetcode.cn/problems/merge-k-sorted-lists/)       |
 |  146  | [LRU 缓存](./Java/Linked-List/00146-lru-cache.md)                                         | Medium |            [LeetCode](https://leetcode.cn/problems/lru-cache/)             |
+|  148  | [排序链表](./Java/Linked-List/00148-sort-list.md)                                         | Medium |            [LeetCode](https://leetcode.cn/problems/sort-list/)             |
+
 
 ### 二叉树 (Binary Tree)
 |  ID   | 题目                                                                                                                    |  难度  |                                                链接                                                 |
@@ -81,13 +83,17 @@ https://leetcode.cn/studyplan/top-100-liked/
 |  114  | [二叉树展开为链表](./Java/Binary-Tree/00114-flatten-binary-tree-to-linked-list.md)                                      | Medium |            [LeetCode](https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/)             |
 |  105  | [从前序与中序遍历序列构造二叉树](./Java/Binary-Tree/00105-construct-binary-tree-from-preorder-and-inorder-traversal.md) | Medium | [LeetCode](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) |
 |  124  | [二叉树中的最大路径和](./Java/Binary-Tree/00124-binary-tree-maximum-path-sum.md)                                        |  Hard  |               [LeetCode](https://leetcode.cn/problems/binary-tree-maximum-path-sum/)                |
+|  236  | [二叉树的最近公共祖先](./Java/Binary-Tree/00236-lowest-common-ancestor-of-a-binary-tree.md)                             | Medium |          [LeetCode](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/)          |
+
 
 ### 图论 (Graph)
-|  ID   | 题目                                                |  难度  |                            链接                             |
-| :---: | :-------------------------------------------------- | :----: | :---------------------------------------------------------: |
-|  200  | [岛屿数量](./Java/Graph/00200-number-of-islands.md) | Medium | [LeetCode](https://leetcode.cn/problems/number-of-islands/) |
-|  994  | [腐烂的橘子](./Java/Graph/00994-rotting-oranges.md) | Medium |  [LeetCode](https://leetcode.cn/problems/rotting-oranges/)  |
-|  207  | [课程表](./Java/Graph/00207-course-schedule.md)     | Medium |  [LeetCode](https://leetcode.cn/problems/course-schedule/)  |
+|  ID   | 题目                                                                   |  难度  |                                 链接                                 |
+| :---: | :--------------------------------------------------------------------- | :----: | :------------------------------------------------------------------: |
+|  200  | [岛屿数量](./Java/Graph/00200-number-of-islands.md)                    | Medium |     [LeetCode](https://leetcode.cn/problems/number-of-islands/)      |
+|  994  | [腐烂的橘子](./Java/Graph/00994-rotting-oranges.md)                    | Medium |      [LeetCode](https://leetcode.cn/problems/rotting-oranges/)       |
+|  207  | [课程表](./Java/Graph/00207-course-schedule.md)                        | Medium |      [LeetCode](https://leetcode.cn/problems/course-schedule/)       |
+|  208  | [实现 Trie (前缀树)](./Java/Graph/00208-implement-trie-prefix-tree.md) | Medium | [LeetCode](https://leetcode.cn/problems/implement-trie-prefix-tree/) |
+
 
 ### 回溯 (Backtracking)
 |  ID   | 题目                                                                                     |  难度  |                                      链接                                       |
@@ -108,11 +114,15 @@ https://leetcode.cn/studyplan/top-100-liked/
 |  153  | [寻找旋转排序数组中的最小值](./Java/Binary-Search/00153-find-minimum-in-rotated-sorted-array.md)                                    | Medium |          [LeetCode](https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array/)           |
 
 ### 栈 (Stack)
-|  ID   | 题目                                                  |  难度  |                             链接                             |
-| :---: | :---------------------------------------------------- | :----: | :----------------------------------------------------------: |
-|  20   | [有效的括号](./Java/Stack/00020-valid-parentheses.md) |  Easy  | [LeetCode](https://leetcode.cn/problems/valid-parentheses/)  |
-|  155  | [最小栈](./Java/Stack/00155-min-stack.md)             | Medium |     [LeetCode](https://leetcode.cn/problems/min-stack/)      |
-|  739  | [每日温度](./Java/Stack/00739-daily-temperatures.md)  | Medium | [LeetCode](https://leetcode.cn/problems/daily-temperatures/) |
+|  ID   | 题目                                                                       |  难度  |                                   链接                                   |
+| :---: | :------------------------------------------------------------------------- | :----: | :----------------------------------------------------------------------: |
+|  20   | [有效的括号](./Java/Stack/00020-valid-parentheses.md)                      |  Easy  |       [LeetCode](https://leetcode.cn/problems/valid-parentheses/)        |
+|  155  | [最小栈](./Java/Stack/00155-min-stack.md)                                  | Medium |           [LeetCode](https://leetcode.cn/problems/min-stack/)            |
+|  739  | [每日温度](./Java/Stack/00739-daily-temperatures.md)                       | Medium |       [LeetCode](https://leetcode.cn/problems/daily-temperatures/)       |
+|  394  | [字符串解码](./Java/Stack/00394-decode-string.md)                          | Medium |         [LeetCode](https://leetcode.cn/problems/decode-string/)          |
+|  84   | [柱状图中最大的矩形](./Java/Stack/00084-largest-rectangle-in-histogram.md) |  Hard  | [LeetCode](https://leetcode.cn/problems/largest-rectangle-in-histogram/) |
+
+
 
 ### 堆 (Heap)
 |  ID   | 题目                                                                            |  难度  |                                   链接                                    |

@@ -33,17 +33,24 @@
 ```Java
 class Solution {
     public int findMin(int[] nums) {
-        int low = 0;
-        int high = nums.length - 1;
-        while (low < high) {
-            int pivot = low + (high - low) / 2;
-            if (nums[pivot] < nums[high]) {
-                high = pivot;
+        int left = 0;
+        int right = nums.length - 1;
+
+        // 注意：这里用 left < right，因为我们要收缩到一个点
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            
+            if (nums[mid] > nums[right]) {
+                // 中间值比右边大，说明断层在右侧，最小值在 [mid + 1, right]
+                left = mid + 1;
             } else {
-                low = pivot + 1;
+                // 中间值比右边小，说明 [mid, right] 这一段是正常的升序
+                // 最小值可能是 mid，或者在 mid 左侧
+                right = mid;
             }
         }
-        return nums[low];
+        // 最后 left == right，指向的就是最小值
+        return nums[left];
     }
 }
 ```

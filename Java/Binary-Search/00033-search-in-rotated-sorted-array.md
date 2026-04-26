@@ -29,29 +29,27 @@
 class Solution {
     public int search(int[] nums, int target) {
         int n = nums.length;
-        if (n == 0) {
-            return -1;
-        }
-        if (n == 1) {
-            return nums[0] == target ? 0 : -1;
-        }
-        int l = 0, r = n - 1;
-        while (l <= r) {
-            int mid = (l + r) / 2;
-            if (nums[mid] == target) {
-                return mid;
-            }
+        if (n == 0) return -1;
+        int left = 0, right = n - 1;
+        
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] == target) return mid;
+            
+            // 核心：判断哪一侧是有序的
             if (nums[0] <= nums[mid]) {
+                // 左侧 [0, mid] 是有序的
                 if (nums[0] <= target && target < nums[mid]) {
-                    r = mid - 1;
+                    right = mid - 1; // target 在左侧有序区间内
                 } else {
-                    l = mid + 1;
+                    left = mid + 1;  // target 在右侧
                 }
             } else {
+                // 右侧 [mid, n-1] 是有序的
                 if (nums[mid] < target && target <= nums[n - 1]) {
-                    l = mid + 1;
+                    left = mid + 1;  // target 在右侧有序区间内
                 } else {
-                    r = mid - 1;
+                    right = mid - 1; // target 在左侧
                 }
             }
         }
