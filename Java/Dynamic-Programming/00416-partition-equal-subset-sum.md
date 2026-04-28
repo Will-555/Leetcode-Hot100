@@ -17,33 +17,62 @@
 - `1 <= nums[i] <= 100`
 
 ```Java
+```Java
 class Solution {
+    /**
+     * 判断数组是否可以划分为和相等的两部分
+     */
     public boolean canPartition(int[] nums) {
-        int n = nums.length;
-        if (n < 2) {
+        int n = nums.length; // 数组长度
+        if (n < 2) { // 少于两个元素不可能划分
             return false;
         }
-        int sum = 0, maxNum = 0;
+        int sum = 0, maxNum = 0; // sum 为数组总和，maxNum 为数组中最大的数
         for (int num : nums) {
-            sum += num;
-            maxNum = Math.max(maxNum, num);
+            sum += num;                // 累加得到总和
+            maxNum = Math.max(maxNum, num); // 同时记录最大值，后面用于剪枝
         }
+        // 如果总和为奇数，显然不可能平分成两个相等子集
         if (sum % 2 != 0) {
             return false;
         }
-        int target = sum / 2;
+        int target = sum / 2; // 目标子集和，即总和的一半
+        // 如果数组中出现的最大值已经大于 target，直接返回 false（剪枝）
         if (maxNum > target) {
             return false;
         }
+        // dp[j] 表示是否能从前 i 个数中凑出和为 j 的子集（这里使用一维滚动数组）
         boolean[] dp = new boolean[target + 1];
-        dp[0] = true;
+        dp[0] = true; // 空集可以凑出和为 0
+        // 遍历每个数字
         for (int i = 0; i < n; i++) {
             int num = nums[i];
+            // 为了防止重复使用同一个数字，需要从 target 向下遍历
             for (int j = target; j >= num; j--) {
+                // 如果之前能够凑出 j-num，则现在可以凑出 j（把当前数字加入子集）
                 dp[j] |= dp[j - num];
             }
         }
+        // dp[target] 为 true 表示可以找到一个子集和为 target，即可以平分
         return dp[target];
     }
 }
 ```
+
+## 题解说明
+
+### 思路概述
+本题等价于 **0/1 背包**：我们要在给定的正整数集合中挑选若干个，使其和恰好等于 `sum/2`（总和的一半）。如果能够做到，则剩余的数字自然也会凑成相同的和。
+
+### 关键点
+1. **奇偶性剪枝**：总和若为奇数，直接返回 `false`。
+2. **最大值剪枝**：如果数组中出现的最大数已经大于 `target`，则不可能组成目标子集。
+3. **动态规划**：使用一维布尔数组 `dp`，`dp[j]` 表示是否能凑出和为 `j`。遍历每个数时从大到小更新，避免同一个数被多次使用。
+
+### 复杂度分析
+- **时间复杂度**：`O(n * target)`，其中 `target = sum/2`，在最坏情况下约为 `O(n * 100 * 200 / 2)`，满足题目约束。
+- **空间复杂度**：`O(target)`，只需要一个长度为 `target+1` 的布尔数组。
+
+### 为什么使用一维 DP
+在 0/1 背包的二维 DP 中，`dp[i][j]` 表示前 `i` 个数能否凑出和 `j`。由于 `dp[i][j]` 只依赖于 `dp[i-1][...]`，我们可以把二维压缩成一维，只保留上一轮的状态，并且**逆序遍历**保证每个数只使用一次。
+

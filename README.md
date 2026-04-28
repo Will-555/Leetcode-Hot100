@@ -62,6 +62,7 @@ https://leetcode.cn/studyplan/top-100-liked/
 |   2   | [两数相加](./Java/Linked-List/00002-add-two-numbers.md)                                   | Medium |         [LeetCode](https://leetcode.cn/problems/add-two-numbers/)          |
 |  19   | [删除链表的倒数第 N 个结点](./Java/Linked-List/00019-remove-nth-node-from-end-of-list.md) | Medium | [LeetCode](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/) |
 |  24   | [两两交换链表中的节点](./Java/Linked-List/00024-swap-nodes-in-pairs.md)                   | Medium |       [LeetCode](https://leetcode.cn/problems/swap-nodes-in-pairs/)        |
+|  25   | [K 个一组翻转链表](./Java/Linked-List/00025-reverse-nodes-in-k-group.md)                  |  Hard  |     [LeetCode](https://leetcode.cn/problems/reverse-nodes-in-k-group/)     |
 |  23   | [合并 K 个升序链表](./Java/Linked-List/00023-merge-k-sorted-lists.md)                     |  Hard  |       [LeetCode](https://leetcode.cn/problems/merge-k-sorted-lists/)       |
 |  146  | [LRU 缓存](./Java/Linked-List/00146-lru-cache.md)                                         | Medium |            [LeetCode](https://leetcode.cn/problems/lru-cache/)             |
 |  148  | [排序链表](./Java/Linked-List/00148-sort-list.md)                                         | Medium |            [LeetCode](https://leetcode.cn/problems/sort-list/)             |
@@ -98,11 +99,14 @@ https://leetcode.cn/studyplan/top-100-liked/
 ### 回溯 (Backtracking)
 |  ID   | 题目                                                                                     |  难度  |                                      链接                                       |
 | :---: | :--------------------------------------------------------------------------------------- | :----: | :-----------------------------------------------------------------------------: |
-|  46   | [全排列](./Java/Backtracking/00046-permutations.md)                                      | Medium |             [LeetCode](https://leetcode.cn/problems/permutations/)              |
-|  78   | [子集](./Java/Backtracking/00078-subsets.md)                                             | Medium |                [LeetCode](https://leetcode.cn/problems/subsets/)                |
 |  17   | [电话号码的字母组合](./Java/Backtracking/00017-letter-combinations-of-a-phone-number.md) | Medium | [LeetCode](https://leetcode.cn/problems/letter-combinations-of-a-phone-number/) |
+|  22   | [括号生成](./Java/Backtracking/00022-generate-parentheses.md)                            | Medium |         [LeetCode](https://leetcode.cn/problems/generate-parentheses/)          |
 |  39   | [组合总和](./Java/Backtracking/00039-combination-sum.md)                                 | Medium |            [LeetCode](https://leetcode.cn/problems/combination-sum/)            |
+|  46   | [全排列](./Java/Backtracking/00046-permutations.md)                                      | Medium |             [LeetCode](https://leetcode.cn/problems/permutations/)              |
+|  51   | [N 皇后](./Java/Backtracking/00051-n-queens.md)                                          |  Hard  |               [LeetCode](https://leetcode.cn/problems/n-queens/)                |
+|  78   | [子集](./Java/Backtracking/00078-subsets.md)                                             | Medium |                [LeetCode](https://leetcode.cn/problems/subsets/)                |
 |  79   | [单词搜索](./Java/Backtracking/00079-word-search.md)                                     | Medium |              [LeetCode](https://leetcode.cn/problems/word-search/)              |
+|  131  | [分割回文串](./Java/Backtracking/00131-palindrome-partitioning.md)                       | Medium |        [LeetCode](https://leetcode.cn/problems/palindrome-partitioning/)        |
 
 ### 二分查找 (Binary Search)
 |  ID   | 题目                                                                                                                                |  难度  |                                               链接                                                |
@@ -129,6 +133,7 @@ https://leetcode.cn/studyplan/top-100-liked/
 | :---: | :------------------------------------------------------------------------------ | :----: | :-----------------------------------------------------------------------: |
 |  215  | [数组中的第 K 个最大元素](./Java/Heap/00215-kth-largest-element-in-an-array.md) | Medium | [LeetCode](https://leetcode.cn/problems/kth-largest-element-in-an-array/) |
 |  347  | [前 K 个高频元素](./Java/Heap/00347-top-k-frequent-elements.md)                 | Medium |     [LeetCode](https://leetcode.cn/problems/top-k-frequent-elements/)     |
+|  295  | [数据流的中位数](./Java/Heap/00295-find-median-from-data-stream.md)             |  Hard  |  [LeetCode](https://leetcode.cn/problems/find-median-from-data-stream/)   |
 
 ### 贪心 (Greedy)
 |  ID   | 题目                                                                         |  难度  |                                   链接                                    |

@@ -28,14 +28,30 @@ class Solution {
     }
 
     public void backtrack(int cur, int[] nums) {
+        // 递归终止条件：已经决定完最后一个元素
         if (cur == nums.length) {
-            ans.add(new ArrayList<Integer>(t));
+            ans.add(new ArrayList<Integer>(t)); // 将当前路径（一种可能的组合）加入结果集
             return;
         }
+
+        // 状态 1：选择当前元素 nums[cur]
         t.add(nums[cur]);
         backtrack(cur + 1, nums);
-        t.remove(t.size() - 1);
+
+        // 状态 2：不选择当前元素 nums[cur]（回溯）
+        t.remove(t.size() - 1); // 撤销选择
         backtrack(cur + 1, nums);
+    }
+
+    public void backtrack(int start, int[] nums) {
+        // 每一个节点都是一个子集（不需要专门的终止条件来添加结果）
+        ans.add(new ArrayList<>(t));
+
+        for (int i = start; i < nums.length; i++) {
+            t.add(nums[i]);        // 做选择
+            backtrack(i + 1, nums); // 递归
+            t.remove(t.size() - 1); // 撤销选择（回溯）
+        }
     }
 }
 ```

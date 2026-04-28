@@ -42,18 +42,31 @@
 ### 代码实现
 
 ```Java
+// 解法：动态规划，dp[i] 表示以下标 i 结尾的最长有效括号长度
 class Solution {
+    /**
+     * 返回给定只含 '(' 和 ')' 的字符串中最长有效括号子串的长度
+     */
     public int longestValidParentheses(String s) {
-        int maxAns = 0;
+        int maxAns = 0;               // 记录全局最大长度
         int n = s.length();
-        int[] dp = new int[n];
+        int[] dp = new int[n];        // dp 数组，默认值 0
+
+        // 从下标 1 开始遍历，因为单个字符不可能构成有效括号
         for (int i = 1; i < n; i++) {
+            // 只在当前字符是 ')' 时才可能形成有效括号
             if (s.charAt(i) == ')') {
+                // 情形一：前一个字符是 '('，形成 "()"，长度加 2
                 if (s.charAt(i - 1) == '(') {
                     dp[i] = (i >= 2 ? dp[i - 2] : 0) + 2;
-                } else if (i - dp[i - 1] > 0 && s.charAt(i - dp[i - 1] - 1) == '(') {
+                }
+                // 情形二：前一个字符也是 ')'，需要检查与之匹配的 '(' 是否存在
+                else if (i - dp[i - 1] > 0 && s.charAt(i - dp[i - 1] - 1) == '(') {
+                    // dp[i-1] 为前一个有效子串长度，+2 为当前匹配的 '(' 与 ')'
+                    // 再加上匹配 '(' 前面的有效子串长度（若存在）
                     dp[i] = dp[i - 1] + ((i - dp[i - 1]) >= 2 ? dp[i - dp[i - 1] - 2] : 0) + 2;
                 }
+                // 更新全局最大值
                 maxAns = Math.max(maxAns, dp[i]);
             }
         }
