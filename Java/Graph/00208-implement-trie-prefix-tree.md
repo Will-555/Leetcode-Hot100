@@ -28,6 +28,7 @@
 ## 代码实现
 
 ```java
+// Trie 前缀树实现，包含详细注释
 class Trie {
     private class TrieNode {
         private TrieNode[] children;

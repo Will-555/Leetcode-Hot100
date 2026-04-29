@@ -25,29 +25,51 @@
 - `prerequisites[i]` 中的所有课程对 **互不相同**
 
 ```Java
+```java
 class Solution {
+    /**
+     * 判断是否可以完成所有课程的学习（拓扑排序）
+     * @param numCourses 课程总数，编号为 0 .. numCourses-1
+     * @param prerequisites 前置课程数组，每个元素 [a, b] 表示学习 a 前必须先学 b
+     * @return 若不存在环且所有课程都能被选修返回 true，否则 false
+     */
     public boolean canFinish(int numCourses, int[][] prerequisites) {
+        // 入度数组，记录每门课程需要的先修课程数量
         int[] indegrees = new int[numCourses];
+        // 邻接表，记录每门课程作为先修课时可以解锁的后续课程列表
         List<List<Integer>> adjacency = new ArrayList<>();
-        Queue<Integer> queue = new LinkedList<>();
-        for(int i = 0; i < numCourses; i++)
+        for (int i = 0; i < numCourses; i++) {
             adjacency.add(new ArrayList<>());
-        // Get the indegree and adjacency list
-        for(int[] cp : prerequisites) {
-            indegrees[cp[0]]++;
-            adjacency.get(cp[1]).add(cp[0]);
         }
-        // Get all the courses with an indegree of 0
-        for(int i = 0; i < numCourses; i++)
-            if(indegrees[i] == 0) queue.add(i);
-        // BFS TopoSort
-        while(!queue.isEmpty()) {
-            int pre = queue.poll();
-            numCourses--;
-            for(int cur : adjacency.get(pre))
-                if(--indegrees[cur] == 0) queue.add(cur);
+        // 构建图：统计入度并填充邻接表
+        for (int[] cp : prerequisites) {
+            int course = cp[0];   // 目标课程
+            int pre = cp[1];      // 先修课程
+            indegrees[course]++;               // 目标课程的入度 +1
+            adjacency.get(pre).add(course);    // 先修课程指向目标课程
         }
+        // 将所有入度为 0（即没有先修要求）的课程加入队列，作为拓扑排序的起点
+        Queue<Integer> queue = new LinkedList<>();
+        for (int i = 0; i < numCourses; i++) {
+            if (indegrees[i] == 0) {
+                queue.offer(i);
+            }
+        }
+        // BFS 进行拓扑排序，逐步移除已选修课程并更新其后继课程的入度
+        while (!queue.isEmpty()) {
+            int pre = queue.poll();   // 选修当前先修课程
+            numCourses--;            // 剩余未选修课程数减一
+            for (int cur : adjacency.get(pre)) {
+                // 对每个受该先修课程影响的后续课程，入度减一
+                if (--indegrees[cur] == 0) {
+                    // 入度降至 0，说明所有先修要求已满足，可加入队列继续选修
+                    queue.offer(cur);
+                }
+            }
+        }
+        // 若所有课程都被选修（numCourses 归零），说明不存在环，返回 true
         return numCourses == 0;
     }
 }
+```
 ```
